@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario de registro</title>
+
+    <style>
+
+        h2 {
+            text-align: center;
+        }
+
+        .contenedor-busqueda {
+            text-align: center;
+            margin-top: 20px;
+           }
+    </style>
+
+    <script>
+
+       function validarVuelo() {
+
+            let origen = document.getElementById('origen').value;
+
+            let destino = document.getElementById('destino').value;
+
+            let fecha = document.getElementById('fecha').value;
+            
+            let plazas_disponibles = document.getElementById('plazas_disponibles').value;
+
+            let precio = document.getElementById('precio').value;
+
+            if (origen === '' || destino === '' || fecha === '' || plazas_disponibles === '' || precio === '') {
+
+                alert('Por favor completa todos los campos');
+
+                return false;
+
+            }
+
+            return true;
+
+        }
+
+        function validarHotel() {
+
+            let nombre = document.getElementById('nombre').value;
+
+            let ubicacion = document.getElementById('ubicacion').value;
+
+            let habitaciones_disponibles = document.getElementById('habitaciones_disponibles').value;
+            
+            let tarifa_noche = document.getElementById('tarifa_noche').value;
+
+            if (nombre === '' || ubicacion === '' || habitaciones_disponibles === '' || tarifa_noche === '') {
+
+                alert('Por favor completa todos los campos');
+
+                return false;
+
+            }
+
+            return true;
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Formulario de registro de vuelos</h2> 
+
+    <form action="Datos vuelo semana 6.php" method="post" onsubmit="return validarVuelo()">
+
+        <div class="contenedor-busqueda">
+            <label for="origen">Origen: </label>
+            <input type="text" id="origen" name="origen" placeholder="Origen">
+            <label for="destino">Destino: </label>
+            <input type="text" id="destino" name="destino" placeholder="Destino">
+            <label for="fecha">Fecha: </label>
+            <input type="date" id="fecha" name="fecha">
+            <label for="plazas_disponibles">Plazas disponibles: </label>
+            <input type="number" id="plazas_disponibles" name="plazas_disponibles" placeholder="Plazas disponibles">
+            <label for="precio">Precio: </label>
+            <input type="number" id="precio" name="precio" placeholder="Precio">
+            <input type="submit" value="Registrar">
+          </div>
+
+    </form>
+
+    <h2>Formulario de registro de hoteles</h2>
+
+    <form action="Datos hotel semana 6.php" method="post" onsubmit="return validarHotel()">
+
+        <div class="contenedor-busqueda">
+            <label for="nombre">Nombre hotel: </label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre hotel">
+            <label for="ubicacion">Ubicación: </label>
+            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ubicacion del hotel">
+            <label for="habitaciones_disponibles">Habitaciones disponibles: </label>
+            <input type="number" id="habitaciones_disponibles" name="habitaciones_disponibles" placeholder="Cantidad disponible">
+            <label for="tarifa_noche">Valor por noche: </label>
+            <input type="number" id="tarifa_noche" name="tarifa_noche" placeholder="Valor por noche">
+            <input type="submit" value="Registrar">
+          </div>
+
+    </form>
