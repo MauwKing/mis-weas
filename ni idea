@@ -1,1 +1,6 @@
 def agregaralgo():
+    lista = []
+    lista.append(input("Ingrese un elemento: "))
+    lista.append(input("Ingrese un elemento: "))
+    
+agregaralgo()
